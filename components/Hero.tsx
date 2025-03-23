@@ -73,7 +73,7 @@ export default function Hero() {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 animate-float">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resume-image-PVkFkJIHmigCoroS2v3tNW0VPEGNVP.png"
+                src= "/profile.png" 
                 alt="Nakul Makode"
                 className="w-full h-full object-cover"
               />
