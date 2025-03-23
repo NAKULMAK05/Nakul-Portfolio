@@ -1,51 +1,10 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
-  const [submitError, setSubmitError] = useState("")
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitError("")
-
-    try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-
-      // Reset form
-      setFormData({ name: "", email: "", subject: "", message: "" })
-      setSubmitSuccess(true)
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitSuccess(false), 5000)
-    } catch (error) {
-      setSubmitError("Something went wrong. Please try again later.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -116,38 +75,15 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="section-subheading">Send Me a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form action="https://formsubmit.co/48c49ac9f1fc3407bd0c6b5e06b32dda" method="POST" className="space-y-4">
               <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="contact-input"
-                />
+                <input type="text" name="name" placeholder="Your Name" required className="contact-input" />
               </div>
               <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="contact-input"
-                />
+                <input type="email" name="email" placeholder="Your Email" required className="contact-input" />
               </div>
               <div>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="contact-input"
-                />
+                <input type="text" name="subject" placeholder="Subject" className="contact-input" />
               </div>
               <div>
                 <textarea
@@ -155,25 +91,16 @@ export default function Contact() {
                   placeholder="Your Message"
                   required
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
                   className="contact-input resize-none"
                 ></textarea>
               </div>
 
-              {submitSuccess && (
-                <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-md text-green-500">
-                  Your message has been sent successfully!
-                </div>
-              )}
+              <input type="hidden" name="_subject" value="New Contact Form Submission" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://nakulmak05.github.io/Nakul_Portfolio/thank-you.html" />
 
-              {submitError && (
-                <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-md text-red-500">{submitError}</div>
-              )}
-
-              <Button type="submit" className="w-full rounded-md" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send className="ml-2 h-4 w-4" />
+              <Button type="submit" className="w-full rounded-md">
+                Send Message
               </Button>
             </form>
           </motion.div>
