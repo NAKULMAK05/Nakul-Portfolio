@@ -44,8 +44,10 @@ export default function About() {
               I am passionate about solving real-world problems through technology and continuously expanding my
               knowledge in emerging tech trends, particularly in machine learning and artificial intelligence.
             </p>
-            <Button className="rounded-full">
-              <Download className="mr-2 h-4 w-4" /> Download CV
+            <Button asChild className="rounded-full">
+              <a href="/nakul_res.pdf" download>
+                <Download className="mr-2 h-4 w-4" /> Download CV
+              </a>
             </Button>
           </motion.div>
 
