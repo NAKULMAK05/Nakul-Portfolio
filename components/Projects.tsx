@@ -16,21 +16,19 @@ const projects = [
     ],
     technologies: ["JavaScript", "Leaflet.js", "Google Geocoding API", "AR.js", "HTML/CSS"],
     github: "https://github.com/NAKULMAK05/Railway-Navigator",
-    live: "#",
   },
   {
-    title: "Face Recognition System",
+    title: "Skin Lesion Classifier",
     description:
-      "A robust real-time face recognition system with 90% precision using CNN and MTCNN for face detection.",
+      "A comprehensive Deep Learning and NLP-based system that classifies skin lesion images into seven different classes.",
     details: [
-      "Achieved 5 simultaneous recognitions with high accuracy using MTCNN for face detection.",
-      "Implemented a scalable SQLite3 database for managing user records with 60% improved retrieval efficiency.",
-      "Developed a Streamlit UI that achieved 100 new registrations and boosted user engagement.",
-      "Enhanced face recognition accuracy by 70% in low-light conditions through ML model optimization.",
+      "Integrated state-of-the-art deep learning and NLP methods to diagnose skin lesions with high accuracy.",
+      "Leveraged the HAM10000 dataset to train models for image classification and lesion segmentation.",
+      "Implemented both frontend and backend components for a complete end-to-end solution.",
+      "Combined image classification, lesion segmentation, and text analysis for robust and reliable predictions.",
     ],
-    technologies: ["Python", "CNN", "MTCNN", "SQLite3", "Streamlit", "OpenCV"],
-    github: "https://github.com/NAKULMAK05/Face-Recognition-System",
-    live: "#",
+    technologies: ["Python", "TensorFlow", "NLP", "Deep Learning", "JavaScript", "Image Processing"],
+    github: "https://github.com/NAKULMAK05/skin-lesion-classifier",
   },
   {
     title: "Event Management System",
@@ -43,7 +41,6 @@ const projects = [
     ],
     technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "Stripe API"],
     github: "https://github.com/NAKULMAK05/Event-Management-System",
-    live: "#",
   },
 ]
 
@@ -59,9 +56,7 @@ export default function Projects() {
           className="text-center mb-12"
         >
           <h2 className="section-heading">My Projects</h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Explore some of my recent work and personal projects
-          </p>
+          <p className="text-foreground/70 max-w-2xl mx-auto">Explore some of my recent work and personal projects</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -77,9 +72,7 @@ export default function Projects() {
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
               <p className="text-foreground/70 mb-4">{project.description}</p>
               <div className="mb-4">
-                <h4 className="text-sm font-medium text-primary mb-2">
-                  Key Features:
-                </h4>
+                <h4 className="text-sm font-medium text-primary mb-2">Key Features:</h4>
                 <ul className="text-sm text-foreground/70 space-y-1 ml-4">
                   {project.details.map((detail, i) => (
                     <li key={i} className="list-disc list-outside">
@@ -89,9 +82,7 @@ export default function Projects() {
                 </ul>
               </div>
               <div className="mb-6">
-                <h4 className="text-sm font-medium text-primary mb-2">
-                  Technologies:
-                </h4>
+                <h4 className="text-sm font-medium text-primary mb-2">Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
                     <span key={i} className="skill-badge">
@@ -101,12 +92,8 @@ export default function Projects() {
                 </div>
               </div>
               <div className="flex gap-4 mt-auto">
-                <Button asChild variant="outline" size="sm" className="rounded-full">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <Button asChild variant="default" size="sm" className="rounded-full">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" /> View on GitHub
                   </a>
                 </Button>
@@ -118,3 +105,4 @@ export default function Projects() {
     </section>
   )
 }
+
