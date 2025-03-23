@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const projects = [
@@ -59,7 +59,9 @@ export default function Projects() {
           className="text-center mb-12"
         >
           <h2 className="section-heading">My Projects</h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">Explore some of my recent work and personal projects</p>
+          <p className="text-foreground/70 max-w-2xl mx-auto">
+            Explore some of my recent work and personal projects
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -75,7 +77,9 @@ export default function Projects() {
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
               <p className="text-foreground/70 mb-4">{project.description}</p>
               <div className="mb-4">
-                <h4 className="text-sm font-medium text-primary mb-2">Key Features:</h4>
+                <h4 className="text-sm font-medium text-primary mb-2">
+                  Key Features:
+                </h4>
                 <ul className="text-sm text-foreground/70 space-y-1 ml-4">
                   {project.details.map((detail, i) => (
                     <li key={i} className="list-disc list-outside">
@@ -85,7 +89,9 @@ export default function Projects() {
                 </ul>
               </div>
               <div className="mb-6">
-                <h4 className="text-sm font-medium text-primary mb-2">Technologies:</h4>
+                <h4 className="text-sm font-medium text-primary mb-2">
+                  Technologies:
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
                     <span key={i} className="skill-badge">
@@ -96,13 +102,12 @@ export default function Projects() {
               </div>
               <div className="flex gap-4 mt-auto">
                 <Button asChild variant="outline" size="sm" className="rounded-full">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" /> GitHub
-                  </a>
-                </Button>
-                <Button asChild size="sm" className="rounded-full">
-                  <a href={project.live} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4" /> View on GitHub
                   </a>
                 </Button>
               </div>
@@ -113,4 +118,3 @@ export default function Projects() {
     </section>
   )
 }
-
