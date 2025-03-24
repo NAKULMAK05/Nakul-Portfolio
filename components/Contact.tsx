@@ -75,7 +75,7 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="section-subheading">Send Me a Message</h3>
-            <form action="https://formspree.io/f/xdkezwvl" method="POST" className="space-y-4">
+            <form action="https://formsubmit.co/48c49ac9f1fc3407bd0c6b5e06b32dda" method="POST" className="space-y-4">
               <div>
                 <input type="text" name="name" placeholder="Your Name" required className="contact-input" />
               </div>
