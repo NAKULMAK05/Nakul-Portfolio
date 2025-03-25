@@ -73,7 +73,9 @@ export default function Projects() {
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
               <p className="text-foreground/70 mb-4">{project.description}</p>
               <div className="mb-4">
-                <h4 className="text-sm font-medium text-primary mb-2">Key Features:</h4>
+                <h4 className="text-sm font-medium text-primary mb-2">
+                  Key Features:
+                </h4>
                 <ul className="text-sm text-foreground/70 space-y-1 ml-4">
                   {project.details.map((detail, i) => (
                     <li key={i} className="list-disc list-outside">
@@ -83,7 +85,9 @@ export default function Projects() {
                 </ul>
               </div>
               <div className="mb-6">
-                <h4 className="text-sm font-medium text-primary mb-2">Technologies:</h4>
+                <h4 className="text-sm font-medium text-primary mb-2">
+                  Technologies:
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
                     <span key={i} className="skill-badge">
@@ -97,7 +101,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="rounded-full inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer pointer-events-auto"
                 >
                   <Github className="mr-2 h-4 w-4" /> View on GitHub
                 </a>
