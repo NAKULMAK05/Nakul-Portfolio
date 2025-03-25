@@ -45,6 +45,11 @@ const projects = [
 ]
 
 export default function Projects() {
+  const handleRedirect = (url: string) => {
+    // Use window.open to open the URL in a new tab
+    window.open(url, "_blank", "noopener,noreferrer")
+  }
+
   return (
     <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -94,15 +99,14 @@ export default function Projects() {
                 </div>
               </div>
               <div className="flex gap-4 mt-auto">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="rounded-full"
+                  onClick={() => handleRedirect(project.github)}
                 >
-                  <Button variant="default" size="sm" className="rounded-full">
-                    <Github className="mr-2 h-4 w-4" /> View on GitHub
-                  </Button>
-                </a>
+                  <Github className="mr-2 h-4 w-4" /> View on GitHub
+                </Button>
               </div>
             </motion.div>
           ))}
