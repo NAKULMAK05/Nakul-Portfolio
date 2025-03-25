@@ -56,7 +56,9 @@ export default function Projects() {
           className="text-center mb-12"
         >
           <h2 className="section-heading">My Projects</h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">Explore some of my recent work and personal projects</p>
+          <p className="text-foreground/70 max-w-2xl mx-auto">
+            Explore some of my recent work and personal projects
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -92,11 +94,15 @@ export default function Projects() {
                 </div>
               </div>
               <div className="flex gap-4 mt-auto">
-                <Button asChild variant="default" size="sm" className="rounded-full">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="default" size="sm" className="rounded-full">
                     <Github className="mr-2 h-4 w-4" /> View on GitHub
-                  </a>
-                </Button>
+                  </Button>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -105,4 +111,3 @@ export default function Projects() {
     </section>
   )
 }
-
