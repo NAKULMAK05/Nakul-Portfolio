@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const projects = [
   {
@@ -45,11 +44,6 @@ const projects = [
 ]
 
 export default function Projects() {
-  const handleRedirect = (url: string) => {
-    // Use window.open to open the URL in a new tab
-    window.open(url, "_blank", "noopener,noreferrer")
-  }
-
   return (
     <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -74,7 +68,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="project-card group"
+              className="project-card group flex flex-col"
             >
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
               <p className="text-foreground/70 mb-4">{project.description}</p>
@@ -99,14 +93,14 @@ export default function Projects() {
                 </div>
               </div>
               <div className="flex gap-4 mt-auto">
-                <Button
-                  variant="default"
-                  size="sm"
-                  className="rounded-full"
-                  onClick={() => handleRedirect(project.github)}
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors"
                 >
                   <Github className="mr-2 h-4 w-4" /> View on GitHub
-                </Button>
+                </a>
               </div>
             </motion.div>
           ))}
