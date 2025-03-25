@@ -101,7 +101,8 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer pointer-events-auto"
+                  style={{ pointerEvents: "auto", cursor: "pointer", zIndex: 10 }}
+                  className="rounded-full inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors"
                 >
                   <Github className="mr-2 h-4 w-4" /> View on GitHub
                 </a>
