@@ -97,7 +97,7 @@ export default function Contact() {
 
               <input type="hidden" name="_subject" value="New Contact Form Submission" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://github.com/NAKULMAK05/Nakul-Portfolio/thank-you.html" />
+              <input type="hidden" name="_next" value="https://nakulmak05.github.io/old_port/thank-you" />
 
               <Button type="submit" className="w-full rounded-md">
                 Send Message
